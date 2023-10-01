@@ -8,7 +8,7 @@
         .then(response => response.text())
         .then(hrgContent => {
           var content = hrgContent.match(/page{(.*?)}/s)[1].trim();
-          content = content.replace(/<text:”(.*?)”?>/g, "<p>$1</p>");
+          content = content.replace(/<text:”(.*?)”?">/g, "<p>$1</p>");
           document.getElementById("output").innerHTML = content;
         });
     }
