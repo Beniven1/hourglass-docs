@@ -9,6 +9,7 @@
         .then(hrgContent => {
           var content = hrgContent.match(/{(.*?)}/s)[1].trim();
           content = content.replace(/<text:(.*?)>/g, "<p>$1</p>");
+          content = "<body>\n" + content + "\n</body>";
           document.getElementById("output").innerHTML = content;
         });
     }
