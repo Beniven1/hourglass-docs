@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Conversion</title>
+  <script>
+    function convertPage() {
+      fetch('page.hrg')
+        .then(response => response.text())
+        .then(hrgContent => {
+          var content = hrgContent.match(/{(.*?)}/s)[1].trim();
+          content = content.replace(/<text:(.*?)>/g, "<p>$1</p>");
+          document.getElementById("output").innerHTML = content;
+        });
+    }
+  </script>
+</head>
+<body>
+  <h1>Page Conversion</h1>
+  <button onclick="convertPage()">Convert</button>
+  <div id="output"></div>
+</body>
+</html>
