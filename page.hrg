@@ -1,0 +1,10 @@
+import pagebuilder
+
+class pageexample {
+page = new pagebuilder
+page{
+<body:
+<text:”hello”>
+>
+}
+}
