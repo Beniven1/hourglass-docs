@@ -4,10 +4,10 @@
   <title>Page Conversion</title>
   <script>
     function convertPage() {
-      fetch('page.hrg')
+      fetch('page.dev')
         .then(response => response.text())
-        .then(hrgContent => {
-          var content = hrgContent.match(/page{(.*?)}/s)[1].trim();
+        .then(devContent => {
+          var content = devContent.match(/page{(.*?)}/s)[1].trim();
           content = content.replace(/<text:”(.*?)”>?/g, "<p>$1</p>");
           document.getElementById("output").innerHTML = content;
         });
